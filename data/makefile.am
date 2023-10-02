@@ -1,0 +1,16 @@
+desktopdir = $(datadir)/wayland-sessions
+
+install-data-local:
+	mkdir -p /etc/mate
+	mkdir -p $(bindir)
+	mkdir -p $(datadir)/wayland-sessions
+	cp  mate-wayland.sh $(bindir)/mate-wayland.sh
+	cp  MATE.desktop $(datadir)/wayland-sessions/MATE.desktop
+	cp  wayfire.ini /etc/mate/wayfire.ini
+
+uninstall-local:
+
+	rm  $(bindir)/mate-wayland.sh
+	rm  $(datadir)/wayland-sessions/MATE.desktop
+	rm  /etc/mate/wayfire.ini
+

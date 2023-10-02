@@ -1,0 +1,35 @@
+SUBDIRS = \
+	data
+
+EXTRA_DIST = \
+	autogen.sh \
+	data 
+
+
+CLEANFILES = \
+	$(theme_DATA)
+
+MAINTAINERCLEANFILES = \
+	Makefile.in \
+	aclocal.m4 \
+	config.guess \
+	config.h.in \
+	config.sub \
+	configure \
+	depcomp \
+	install-sh \
+	intltool-*.in \
+	libtool \
+	ltmain.sh \
+	missing \
+	mkinstalldirs 
+
+# Build ChangeLog from GIT  history
+ChangeLog:
+	$(AM_V_GEN) if test -d $(top_srcdir)/.git; then \
+		GIT_DIR="$(top_srcdir)/.git" git log --stat > $@; \
+	fi
+
+dist: ChangeLog
+
+.PHONY: ChangeLog

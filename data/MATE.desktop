@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=MATE on Wayfire
+Exec=mate-wayland.sh
+TryExec=mate-wayland.sh
+Icon=
+Type=Application
+DesktopNames=mate on Wayfire
+Name[en_US]=MATE
