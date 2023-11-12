@@ -23,7 +23,7 @@ DETAILS OF MATE-WAYLAND-SESSION
 
 This is a simple and for now experimental MATE session using wayfire. Wayfire is a wayland compositor reimplementing much of the look and feel of compiz.
 
-This has been tested and is known to work under SDDM, so it should work under any display manager that supports wayland. This sessoin is shown in the greeter along with the MATE x11 session and all other installed sessions.
+This has been tested and is known to work under SDDM, so it should work under any display manager that supports wayland. This session is shown in the greeter along with the MATE x11 session and all other installed sessions.
 
 For now the session launcher is a script.  We use the system message bus so this session cannot run simultaniously with an X11 session using dbus on another TTY. Much of wayfire relies on wayfire.ini for configuration, so we install a MATE-specific wayfire.ini in /etc/mate and call wayfire with wayfire -c /etc/mate/wayfire.ini  so as to allow a standard wayfire session to coexist on the same system, selectable from the greeter.
 
