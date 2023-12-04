@@ -1,10 +1,10 @@
+#!/bin/sh
 #Set up dbus
 
 systemctl --user import-environment DISPLAY WAYLAND_DISPLAY
 hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
 
 #Programs to restart while compositor is running, matching Xorg behavior
-
 
 (while true; do
 mate-panel
