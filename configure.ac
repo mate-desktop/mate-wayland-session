@@ -17,7 +17,7 @@ AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
 AC_CONFIG_FILES([
 makefile
-data/makefile
+session/makefile
 ])
 
 AC_OUTPUT
@@ -26,7 +26,7 @@ dnl ==========================================================================
 echo "
 	mate-session-wayland-$VERSION:
 
-	Installation prefix:                    ${prefix}
+	Installation prefix: ${prefix}
 
 	configuration successfully, now type make
 "

@@ -1,13 +1,16 @@
 SUBDIRS = \
-	data
+	session
 
 EXTRA_DIST = \
 	autogen.sh \
-	data 
+	session 
 
 
 CLEANFILES = \
-	$(theme_DATA)
+	makefile.in \
+	makefile \
+	session/makefile.in \
+	session/makefile 
 
 MAINTAINERCLEANFILES = \
 	Makefile.in \
