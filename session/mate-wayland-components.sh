@@ -42,6 +42,16 @@ if [ $? -ne 0  ]; then
 fi
 done) &
 
-#Programs to start once, matching Xorg behavior
-nm-applet --indicator
+#Programs to start once (if we have them), matching Xorg behavior
+nm-applet --indicator &
+cat /usr/bin/blueman-applet > /dev/null
+if [ $? -eq 0  ]; then
+    blueman-applet &
+fi
+cat /usr/bin/gnome-keyring-daemon > /dev/null
+if [ $? -eq 0  ]; then
+    gnome-keyring-daemon --start --components=pkcs11 &
+    #Run the last process in the foreground to ensure a normal session exit
+    gnome-keyring-daemon --start --components=ssh 
+fi
 
