@@ -13,5 +13,3 @@ fi
 #Start the compositor
 wayfire
 
-#Clean up subshells on exit
-killall sh
