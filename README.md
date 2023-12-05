@@ -25,7 +25,10 @@ This is a simple and for now experimental MATE session using wayfire. Wayfire is
 
 This has been tested and is known to work under SDDM, so it should work under any display manager that supports wayland. This session is shown in the greeter along with the MATE x11 session and all other installed sessions.
 
-For now the session launcher is a script.  We use the system message bus so this session cannot run simultaniously with an X11 session using dbus on another TTY. Much of wayfire relies on wayfire.ini for configuration, so we install a MATE-specific wayfire.ini in /etc/mate and call wayfire with wayfire -c /etc/mate/wayfire.ini  so as to allow a standard wayfire session to coexist on the same system, selectable from the greeter.
+For now the session launcher is a script, and a second script (mate-wayland-components.sh) launches the mate programs inside wayfire.  We use the system message bus so this session cannot run simultaniously with an X11 session using dbus on another TTY. We can only launch anything running under wayland from inside the compositor and that is done by adding everything to be autostarted to ~/.config/wayfire.ini 
+Note that several other compositors use a similar system. 
+
+Therefore, at startup we check this file for the presence of mate-wayland-components.sh in the autostart portion of wayfire.ini and add it if and only if it is not already present. This allows us to start mate-session components such as caja and mate-panel without interfering with any other part of a user's wayfire configuration. This also permits wayfire-configuration-manager (WCM) to work normally. 
 
 Note that wayfire follows GNOME not MATE gsettings preferences for such things as fonts and icon themes. You can set these with dconf-editor for now, we need a fix for this in the future.
 

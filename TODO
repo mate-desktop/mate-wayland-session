@@ -1,0 +1,5 @@
+Add a wcm capplet for mate-control-center when WCM is installed
+
+Integrate the grim screenshooter as a backend for mate-screenshot
+
+Find a solution to the use of GNOME rather than MATE gsettings preferences
