@@ -28,7 +28,9 @@ This has been tested and is known to work under SDDM, so it should work under an
 For now the session launcher is a script, and a second script (mate-wayland-components.sh) launches the mate programs inside wayfire.  We use the system message bus so this session cannot run simultaniously with an X11 session using dbus on another TTY. We can only launch anything running under wayland from inside the compositor and that is done by adding everything to be autostarted to ~/.config/wayfire.ini 
 Note that several other compositors use a similar system. 
 
-Therefore, at startup we check this file for the presence of mate-wayland-components.sh in the autostart portion of wayfire.ini and add it if and only if it is not already present. This allows us to start mate-session components such as caja and mate-panel without interfering with any other part of a user's wayfire configuration. This also permits wayfire-configuration-manager (WCM) to work normally. 
+Therefore, at first startup find wayfire.ini if the user has copied it to their home directory, and find it in /usr/share/doc if it has not been installed in ~/config. Copy it to ~/.config/mate/wayfire.ini and edit it with sed to add mate-wayland-components.sh and disable starting the default wayfire shell by default. Once made, the session won't edit this file again, so the user can turn the default shell back on if they so desire.
+
+This allows us to start mate-session components such as caja and mate-panel without interfering with any other part of a user's wayfire configuration and without breaking a wayland session run without MATE either. Wayfire-configuration-manager (WCM) will read from and write to the .ini file wayfire was opened with, so it will work.
 
 Note that wayfire follows GNOME not MATE gsettings preferences for such things as fonts and icon themes. You can set these with dconf-editor for now, we need a fix for this in the future.
 
