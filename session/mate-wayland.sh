@@ -4,7 +4,7 @@
 
 create_initial_config()
     {
-    mkdir -p /home/luke/.config/mate
+    mkdir -p /home/$USER/.config/mate
 
     #Find any existing wayfire.ini file
     if [ -e  /home/$USER/.config/wayfire.ini ]; then
