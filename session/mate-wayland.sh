@@ -22,6 +22,8 @@ create_initial_config()
         sed -i '/autostart]/a mate = mate-wayland-components.sh' /home/$USER/.config/mate/wayfire.ini
         #do not start wayfire's default shell if installed
         sed -i 's/autostart_wf_shell = true.*/autostart_wf_shell = false/' /home/$USER/.config/mate/wayfire.ini
+        #DO start the background though
+        sed -i '/autostart]/a background = wf-background' /home/$USER/.config/mate/wayfire.ini
     fi
 
     return 0
