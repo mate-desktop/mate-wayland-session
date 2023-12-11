@@ -1,7 +1,10 @@
 
 AC_PREREQ(2.53)
 
-AC_INIT([mate-session-wayland], [1.27.0], [https://github.com/lukefromdc])
+AC_INIT([mate-session-wayland],
+        [1.27.0],
+        [https://github.com/mate-desktop/mate-session-wayland/issues],
+        [https://mate-desktop.org])
 
 AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz tar-ustar check-news])
 
@@ -18,6 +21,7 @@ AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 AC_CONFIG_FILES([
 makefile
 session/makefile
+data/makefile
 ])
 
 AC_OUTPUT

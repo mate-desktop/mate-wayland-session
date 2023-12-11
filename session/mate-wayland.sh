@@ -15,7 +15,7 @@ create_initial_config()
         cp /usr/share/doc/wayfire/examples/wayfire.ini /home/$USER/.config/mate/wayfire.ini
     fi
 
-    #Add mate-wayland-components.sh to wayfire startup programs
+    #Add mate-wayland-components.sh to wayfire startup programs and set sane session defaults
     grep "mate-wayland-components" /home/$USER/.config/mate/wayfire.ini
 
     if [ $? -ne 0  ]; then
@@ -24,16 +24,18 @@ create_initial_config()
         sed -i 's/autostart_wf_shell = true.*/autostart_wf_shell = false/' /home/$USER/.config/mate/wayfire.ini
         #DO start the background though
         sed -i '/autostart]/a background = wf-background' /home/$USER/.config/mate/wayfire.ini
+        #Use server-side decoration (SSD) by default as CSD is broken with caja
+        sed -i 's/preferred_decoration_mode = client.*/preferred_decoration_mode = server/' /home/$USER/.config/mate/wayfire.ini
     fi
 
     return 0
     }
 
-add_mate_components()
+check_config_file()
 
     {
     if [ -e  /home/$USER/.config/mate/wayfire.ini ]; then
-        #If we have already configured wayfire for MATE we are good to go
+        #If we have already configured wayfire for MATE do not alter the file
         return 0
     else
         #create ~/config/mate/wayfire.ini and include mate components in it
@@ -42,7 +44,12 @@ add_mate_components()
     fi
     }
 
-add_mate_components
+#See if we have already configured the session or not
+check_config_file
+
+# Set XDG_CURRENT_DESKTOP
+
+export XDG_CURRENT_DESKTOP="MATE-wayland"
 
 #Start the compositor
 wayfire -c /home/$USER/.config/mate/wayfire.ini

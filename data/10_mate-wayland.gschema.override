@@ -1,0 +1,8 @@
+[org.gnome.desktop.wm.preferences:MATE-wayland]
+button-layout='menu:minimum,maximize,close'
+
+[org.gnome.desktop.interface:MATE-wayland]
+gtk-theme='menta'
+icon-theme='mate'
+overlay-scrolling=false
+
