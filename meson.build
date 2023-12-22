@@ -6,3 +6,5 @@ project('mate-wayland-session',
 
 subdir('data')
 subdir('session')
+
+meson.add_install_script('meson-postinstall.sh')
