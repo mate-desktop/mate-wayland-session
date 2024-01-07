@@ -51,7 +51,7 @@ check_config_file
 
 # Set XDG_CURRENT_DESKTOP
 
-export XDG_CURRENT_DESKTOP="MATE-wayland"
+export XDG_CURRENT_DESKTOP="MATE"
 
 #Start the compositor
 wayfire -c /home/$USER/.config/mate/wayfire.ini
