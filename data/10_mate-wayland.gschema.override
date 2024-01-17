@@ -1,5 +1,5 @@
 [org.gnome.desktop.wm.preferences:MATE]
-button-layout='menu:minimum,maximize,close'
+button-layout='menu:minimize,maximize,close'
 
 [org.gnome.desktop.interface:MATE]
 gtk-theme='menta'
