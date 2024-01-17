@@ -13,6 +13,19 @@ create_initial_config()
     else
         #User has not configured wayfire. Look for the default .ini file where the package manager put it 
         cp /usr/share/doc/wayfire/examples/wayfire.ini /home/$USER/.config/mate/wayfire.ini
+
+        #Default to using firedecor and the menta theme if we have firedecor installed
+        if [ -e  /usr/lib/x86_64-linux-gnu/wayfire/libfiredecor.so ]; then
+            cat /usr/share/doc/wayfire/examples/wayfire.ini /usr/share/doc/firedecor/firedecor.config \
+            > /home/$USER/.config/mate/wayfire.ini
+            sed -i 's/decoration \\.*/firedecor \\/' /home/$USER/.config/mate/wayfire.ini
+        fi
+
+        if [ -e  /usr/lib/wayfire/libfiredecor.so ]; then
+            cat /usr/share/doc/wayfire/examples/wayfire.ini /usr/share/doc/firedecor/firedecor.config \
+            > /home/$USER/.config/mate/wayfire.ini
+            sed -i 's/decoration \\.*/firedecor \\/' /home/$USER/.config/mate/wayfire.ini
+        fi
     fi
 
     #Add mate-wayland-components.sh to wayfire startup programs and set sane session defaults

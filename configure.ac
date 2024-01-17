@@ -22,6 +22,7 @@ AC_CONFIG_FILES([
 makefile
 session/makefile
 data/makefile
+data/mate/makefile
 ])
 
 AC_OUTPUT
