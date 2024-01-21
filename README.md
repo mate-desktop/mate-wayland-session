@@ -11,6 +11,14 @@ configuration file are wayfire-specific.
 Autotools will install the files in the correct places and can be used in the
 usual way to build distribution packages
 
+WAYFIRE FIREDECOR PLUGIN RECOMMENDED
+===
+
+It is recommended that the firedecor wayfire plugin be installed, as this
+allows use of a window decorator theme similar to the Menta marco theme. If
+this is not available however the session will still work, the first run
+setup code wil not attempt to set a MATE specific window decoration
+theme but do everything else the same way;
 
 REPORTING BUGS AND SUBMITTING PATCHES
 ===
@@ -32,6 +40,10 @@ Therefore, at first startup find wayfire.ini if the user has copied it to their 
 
 This allows us to start mate-session components such as caja and mate-panel without interfering with any other part of a user's wayfire configuration and without breaking a wayland session run without MATE either. Wayfire-configuration-manager (WCM) will read from and write to the .ini file wayfire was opened with, so it will work.
 
-Note that wayfire follows GNOME not MATE gsettings preferences for such things as fonts and icon themes. You can re-set these with dconf-editor for now, we need a fix for this in the future. A gsettings override file included with this package sets the MATE icon theme and Menta GTK theme and turns off overlay scrolling on a new or default install
+Note that wayfire follows GNOME not MATE gsettings preferences for such things as fonts and icon themes. You can re-set these with dconf-editor for now, we need a fix for this in the future. A gsettings override file included with this package sets the MATE icon theme and Menta GTK theme and turns off overlay scrolling on a new or default install.
+
+As stated above, we recommend that wayfire's "firedecor" plugin be installed. This is a window decorator plugin with more features that the default SSD decorator, including the ability to theme the window control buttons and change the font color. Both of these are necessary to allow setting a default window decorator theme similar to the Menta marco theme in x11. If the firedecor plugin is not installed, this code is simply ignored and the window decoration defaults to wayfire's default ssd decoration theme.
+
+The session defaults to SSD (server-side decoration) rather than wayfire's default of CSD (client-side decoration) due to several issues with using CSD on MATE apps. If CSD is selected by the user, the window decorator theme set in the GTK theme for CSD apps is applied and will often be a good match for the marco theme (since we don't use headerbars in MATE), but caja navigation windows become difficult to move (cannot be dragged by the titlebar and require the keyboard "super" key amd left mouse button to move or the keyboard "super" key amd right mouse button to resize. On top of that, some windows such as mate-terminal get geometry issues. Thus we default to the traditional server-side decoration and windows work normally.
 
 Obviously we don't use an xsettings manager as we are not running under Xorg. Wayland compositors control a lot more of the session than X11 window managers do, wayfire thus does in wayland all of what marco would do in x11 plus some of what mate-session-manager mate-settings-daemon would do.
