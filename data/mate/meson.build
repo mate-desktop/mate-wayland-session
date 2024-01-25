@@ -1,4 +1,4 @@
-window_buttons = ['close.png', 'close-hovered.png', 'close-pressed.png', 'menu.png', 'menu-hovered.png', 'minimize.png', 'minimize-hovered.png', 'minimize-pressed.png', 'toggle-maximize.png', 'toggle-maximize-hovered.png', 'toggle-maximize-pressed.png',
+window_buttons = ['close.png', 'close-hovered.png', 'close-pressed.png', 'minimize.png', 'minimize-hovered.png', 'minimize-pressed.png', 'toggle-maximize.png', 'toggle-maximize-hovered.png', 'toggle-maximize-pressed.png',
 ]
 
 foreach button: window_buttons
