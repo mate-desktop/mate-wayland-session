@@ -6,16 +6,20 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 %.desktop: %.desktop.in Makefile
 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
+bin_SCRIPTS = mate-wayland.sh mate-wayland-components.sh
+
 install-data-local:
 	mkdir -p $(bindir)
 	mkdir -p $(datadir)/wayland-sessions
-	cp  mate-wayland.sh $(bindir)/mate-wayland.sh
-	cp  mate-wayland-components.sh $(bindir)/mate-wayland-components.sh
-	cp  MATE.desktop $(datadir)/wayland-sessions/MATE.desktop
 
-uninstall-local:
 
-	rm  $(bindir)/mate-wayland.sh
-	rm  $(bindir)/mate-wayland-components.sh
-	rm  $(datadir)/wayland-sessions/MATE.desktop
+EXTRA_DIST = \
+	mate-wayland.sh \
+	MATE.desktop \
+	mate-wayland.sh \
+	mate-wayland-components.sh \
+	meson.build
 
+DISTCLEANFILES = \
+	$(desktop_DATA) \
+	$(NULL)

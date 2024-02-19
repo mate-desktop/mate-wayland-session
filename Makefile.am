@@ -5,34 +5,26 @@ SUBDIRS = \
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
+DISTCHECK_CONFIGURE_FLAGS = \
+--disable-schemas_compile
+
 EXTRA_DIST = \
 	autogen.sh \
 	session \
-	data
+	data \
+	meson.build \
+	meson-postinstall.sh
 
-
-CLEANFILES = \
-	makefile.in \
-	makefile \
-	session/makefile.in \
-	session/makefile \
-	data/makefile.in \
-	data/makefile 
-
-MAINTAINERCLEANFILES = \
-	Makefile.in \
+DISTCLEANFILES = \
 	aclocal.m4 \
-	config.guess \
-	config.h.in \
-	config.sub \
-	configure \
-	depcomp \
-	install-sh \
+	autom4te.cache/* \
+	m4/* \
 	intltool-*.in \
 	libtool \
 	ltmain.sh \
-	missing \
-	mkinstalldirs 
+	omf.make \
+	mkinstalldirs \
+	xmldocs.make
 
 # Build ChangeLog from GIT  history
 ChangeLog:
