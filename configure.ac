@@ -20,10 +20,10 @@ PKG_PROG_PKG_CONFIG([0.19])
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
 AC_CONFIG_FILES([
-makefile
-session/makefile
-data/makefile
-data/mate/makefile
+Makefile
+session/Makefile
+data/Makefile
+data/mate/Makefile
 ])
 
 AC_OUTPUT
