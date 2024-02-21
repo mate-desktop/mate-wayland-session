@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the mate-session-wayland package.
+# This file is distributed under the same license as the mate-wayland-session package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-wayland 1.27.0\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-session-wayland/"
+"Project-Id-Version: mate-wayland-session 1.27.0\n"
+"Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-wayland-session/"
 "issues\n"
 "POT-Creation-Date: 2024-02-21 15:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
