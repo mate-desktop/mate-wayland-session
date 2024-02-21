@@ -1,10 +1,10 @@
 
 AC_PREREQ(2.53)
 
-AC_INIT([mate-session-wayland],
+AC_INIT([mate-wayland-session],
         [1.27.0],
-        [https://github.com/mate-desktop/mate-session-wayland/issues],
-        [mate-session-wayland],
+        [https://github.com/mate-desktop/mate-wayland-session/issues],
+        [mate-wayland-session],
         [https://mate-desktop.org])
 
 AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz tar-ustar check-news])
@@ -30,7 +30,7 @@ AC_OUTPUT
 
 dnl ==========================================================================
 echo "
-	mate-session-wayland-$VERSION:
+	mate-wayland-session-$VERSION:
 
 	Installation prefix: ${prefix}
 
