@@ -1,0 +1,9 @@
+[main]
+host =  https://www.transifex.com
+
+[o:mate:p:MATE:r:master--mate-wayland-session]
+file_filter  = po/<lang>.po
+source_file  = mate-wayland-session.pot
+source_lang  = en
+type         = PO
+minimum_perc = 2

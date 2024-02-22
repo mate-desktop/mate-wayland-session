@@ -1,0 +1,4 @@
+data/10_mate-wayland.gschema.override
+data/firedecor.config
+session/mate-wayland.sh
+session/mate-wayland-components.sh

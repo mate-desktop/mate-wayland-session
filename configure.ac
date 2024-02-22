@@ -16,14 +16,21 @@ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
 PKG_PROG_PKG_CONFIG([0.19])
 
-# Workaround to make aclocal get the right flags
-AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
+# ****************************
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT_REQUIRE_VERSION([0.19.8])
+
+GETTEXT_PACKAGE=mate-wayland-session
+AC_SUBST([GETTEXT_PACKAGE])
+AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"],[Gettext package])
 
 AC_CONFIG_FILES([
 Makefile
 session/Makefile
 data/Makefile
 data/mate/Makefile
+po/Makefile.in
 ])
 
 AC_OUTPUT

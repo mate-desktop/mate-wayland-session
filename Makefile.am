@@ -1,6 +1,9 @@
 SUBDIRS = \
-	session \
-	data
+	data \
+	po \
+	session
+
+ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 EXTRA_DIST = \
 	autogen.sh \
