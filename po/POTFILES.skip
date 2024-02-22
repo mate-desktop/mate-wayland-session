@@ -1,13 +1,4 @@
 data/10_mate-wayland.gschema.override
 data/firedecor.config
-data/mate/close.png
-data/mate/close-hovered.png
-data/mate/close-pressed.png
-data/mate/minimize.png
-data/mate/minimize-hovered.png
-data/mate/minimize-pressed.png
-data/mate/toggle-maximize.png
-data/mate/toggle-maximize-hovered.png
-data/mate/toggle-maximize-pressed.png
 session/mate-wayland.sh
 session/mate-wayland-components.sh
