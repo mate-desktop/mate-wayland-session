@@ -2,7 +2,7 @@
 button-layout='menu:minimize,maximize,close'
 
 [org.gnome.desktop.interface:MATE]
-gtk-theme='menta'
+gtk-theme='Menta'
 icon-theme='mate'
 overlay-scrolling=false
 
