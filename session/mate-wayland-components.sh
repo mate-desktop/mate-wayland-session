@@ -1,4 +1,8 @@
 #!/bin/sh
+
+#make sure we can find anything normally installed in libexec even if installed elsewhere
+export PATH=$PATH:/usr/local/libexec:/usr/libexec
+
 #Set up dbus
 
 systemctl --user import-environment DISPLAY WAYLAND_DISPLAY
@@ -17,7 +21,7 @@ done) &
 
 (pgrep "wayfire"
 while true; do
-/usr/libexec/polkit-mate-authentication-agent-1
+polkit-mate-authentication-agent-1
 pgrep "wayfire"
 if [ $? -ne 0  ]; then
        break
@@ -26,7 +30,7 @@ done) &
 
 (pgrep "wayfire"
 while  true; do
-/usr/libexec/mate-notification-daemon
+mate-notification-daemon
 pgrep "wayfire"
 if [ $? -ne 0  ]; then
        break
