@@ -8,8 +8,7 @@ BUILDING MATE-WAYLAND-SESSION
 You need wayfire installed to run this session, as the startup script and
 configuration file are wayfire-specific.
 
-Autotools will install the files in the correct places and can be used in the
-usual way to build distribution packages
+Autotools or meson will install the files in the correct places
 
 WAYFIRE FIREDECOR PLUGIN RECOMMENDED
 ===
@@ -18,7 +17,31 @@ It is recommended that the firedecor wayfire plugin be installed, as this
 allows use of a window decorator theme similar to the Menta marco theme. If
 this is not available however the session will still work, the first run
 setup code wil not attempt to set a MATE specific window decoration
-theme but do everything else the same way;
+theme but do everything else the same way.
+
+NOTES ON INSTALL DIRECTORIES FOR FIREDECOR THEME
+===
+
+Note that for the Menta style window control (min/max/close) buttons to be
+used instead of Firedecor's default buttons, the data directory used in
+installing mate-wayland-session must be the same as the data directory
+used by firedecor, like this:
+
+1: firedecor installed to /usr, mate-wayland-session installed to /usr: Menta window buttons on first run
+This is what anyone installing wayfire, firedecor, and mate-wayland session all from their distro's packages will see
+
+2: firedecor installed to /usr/local, mate-wayland-session installed to /usr/local: Menta window buttons on first run
+This is what anyone installing both firedecor and mate-wayland-session from local builds to /usr/local will see
+
+3: firedecor installed to /usr, mate-wayland-session installed to /usr/local: firedecor default window buttons used on first run
+In this case, copying or symlinking the buttons in usr/local/firedecor/button-styles/mate/ to usr/firedecor/button-styles/mate/ 
+will show the Menta buttons next time the compositor is started, but an install to /usr/local is not supposed to touch /usr
+
+4: firedecor installed to /usr/local, mate-wayland-session installed to /usr: firedecor default window buttons used on first run
+In this case, copying or symlinking the buttons in usr/firedecor/button-styles/mate/ to usr/local/firedecor/button-styles/mate/
+Note that installs of binaries released by distros never touch /usr/local so if your distro does not offer firedecor and you
+wish to install firedecor to /usr/local this will be necessary if the Menta style buttons are to be shown.
+
 
 REPORTING BUGS AND SUBMITTING PATCHES
 ===
@@ -38,7 +61,7 @@ Note that several other compositors use a similar system.
 
 Therefore, at first startup find wayfire.ini if the user has copied it to their home directory, and find it in /usr/share/doc if it has not been installed in ~/config. Copy it to ~/.config/mate/wayfire.ini and edit it with sed to add mate-wayland-components.sh and disable starting the default wayfire shell by default. Once made, the session won't edit this file again, so the user can turn the default shell back on if they so desire.
 
-This allows us to start mate-session components such as caja and mate-panel without interfering with any other part of a user's wayfire configuration and without breaking a wayland session run without MATE either. Wayfire-configuration-manager (WCM) will read from and write to the .ini file wayfire was opened with, so it will work.
+This allows us to start mate-session components such as caja and mate-panel without interfering with any other part of a user's wayfire configuration and without breaking a wayland session run without MATE either. Wayfire-configuration-manager (WCM) will read from and write to the .ini file wayfire was opened with, so it will work. Caja, mate-panel, the notification daemon, and mate-polkit automatically restart if terminated or crashed.
 
 Note that wayfire follows GNOME not MATE gsettings preferences for such things as fonts and icon themes. You can re-set these with dconf-editor for now, we need a fix for this in the future. A gsettings override file included with this package sets the MATE icon theme and Menta GTK theme and turns off overlay scrolling on a new or default install.
 
