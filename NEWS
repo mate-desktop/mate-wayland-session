@@ -1,3 +1,22 @@
+### mate-wayland-session 1.28.0
+
+  *Update build system to allow creating releases with make distcheck and installing to /usr/local
+  *Defaults: Don't use wobbly windows
+  *Defaults: use menta style window borders, firedecor plugin
+  *settings: fix button layout error
+  *Set XDG_CURRENT_DESKTOP="MATE"
+  *Disable all dialogs modal default setting
+  *Use a gschema override to set MATE defaults in org/gnome/desktop/interface (used by wayfire)
+  *Add Blueman and gnome-keyring to session
+  *On first run, create an edited wayfire.ini as ~/.config/mate/wayfire.ini and use this file in mate wayfire sessions
+  *auto-restart core session components if crashed as in an x11 session
+  *Move dbus setup out of wayfire.ini
+  *Move MATE components out of wayfire.ini
+  *Add ChangeLog default file
+  *Fix display of OnlyShowIn menu items, fix slow startup
+
+
+
 ### mate-wayland-session 1.27.0
   
   *Initial release
