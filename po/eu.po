@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Sergej A. <Ser82-png@yandex.ru>, 2024
+# Alexander Gabilondo <alexgabi@disroot.org>, 2024
 # 
 msgid ""
 msgstr ""
@@ -12,24 +12,24 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-wayland-session/issues\n"
 "POT-Creation-Date: 2024-02-21 15:33-0500\n"
 "PO-Revision-Date: 2024-02-22 10:20+0000\n"
-"Last-Translator: Sergej A. <Ser82-png@yandex.ru>, 2024\n"
-"Language-Team: Russian (https://app.transifex.com/mate/teams/13566/ru/)\n"
+"Last-Translator: Alexander Gabilondo <alexgabi@disroot.org>, 2024\n"
+"Language-Team: Basque (https://app.transifex.com/mate/teams/13566/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: eu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: session/MATE.desktop:3
 msgid "MATE on Wayfire"
-msgstr "MATE на Wayfire"
+msgstr "MATE Wayfire-n"
 
 #: session/MATE.desktop:4
 msgid "This session logs you into MATE using the wayfire wayland compositor"
-msgstr "В этот сеанс MATE вы входите с помощью wayland-композитора wayfire"
+msgstr "Honek MATEn saioa hasten du wayfire wayland konpositorea erabiliz"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: session/MATE.desktop:11
 msgid "launch;MATE;desktop;session;"
-msgstr "запуск;MATE;рабочий стол;сессия;сеанс;"
+msgstr "abiarazi;MATE;mahaigaineko;saioa;"

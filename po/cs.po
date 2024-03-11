@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mate-wayland-session 1.27.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-wayland-session/issues\n"
-"POT-Creation-Date: 2024-02-22 10:57+0100\n"
+"POT-Creation-Date: 2024-02-21 15:33-0500\n"
 "PO-Revision-Date: 2024-02-22 10:20+0000\n"
 "Last-Translator: ToMáš Marný, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/mate/teams/13566/cs/)\n"
@@ -22,14 +22,14 @@ msgstr ""
 
 #: session/MATE.desktop:3
 msgid "MATE on Wayfire"
-msgstr ""
+msgstr "MATE na Wayfire"
 
 #: session/MATE.desktop:4
 msgid "This session logs you into MATE using the wayfire wayland compositor"
-msgstr ""
+msgstr "Tato relace vás přihlásí do MATE pomocí wayland kompozitoru wayfire"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: session/MATE.desktop:11
 msgid "launch;MATE;desktop;session;"
-msgstr "spustit;MATE;desktop;plocha;sezení;relace;"
+msgstr "spustit;spouštění;MATE;desktop;plocha;sezení;relace;"
