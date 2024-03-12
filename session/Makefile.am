@@ -6,18 +6,11 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 %.desktop: %.desktop.in Makefile
 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
-bin_SCRIPTS = mate-wayland.sh mate-wayland-components.sh
-
-install-data-local:
-	mkdir -p $(bindir)
-	mkdir -p $(datadir)/wayland-sessions
-
+dist_bin_SCRIPTS = mate-wayland.sh mate-wayland-components.sh
 
 EXTRA_DIST = \
-	mate-wayland.sh \
 	MATE.desktop \
-	mate-wayland.sh \
-	mate-wayland-components.sh \
+	$(desktop_in_files) \
 	meson.build
 
 DISTCLEANFILES = \
