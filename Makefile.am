@@ -5,9 +5,6 @@ SUBDIRS = \
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-DISTCHECK_CONFIGURE_FLAGS = \
---disable-schemas_compile
-
 EXTRA_DIST = \
 	autogen.sh \
 	session \
