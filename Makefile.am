@@ -5,13 +5,8 @@ SUBDIRS = \
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-DISTCHECK_CONFIGURE_FLAGS = \
---disable-schemas_compile
-
 EXTRA_DIST = \
 	autogen.sh \
-	session \
-	data \
 	meson.build \
 	meson-postinstall.sh
 
@@ -26,6 +21,15 @@ DISTCLEANFILES = \
 	mkinstalldirs \
 	xmldocs.make
 
+MAINTAINERCLEANFILES = \
+	$(srcdir)/aclocal.m4 \
+	$(srcdir)/config.guess \
+	$(srcdir)/config.sub \
+	$(srcdir)/install-sh \
+	$(srcdir)/missing \
+	$(srcdir)/omf.make \
+	$(srcdir)/xmldocs.make
+
 # Build ChangeLog from GIT  history
 ChangeLog:
 	$(AM_V_GEN) if test -d $(top_srcdir)/.git; then \
@@ -35,3 +39,5 @@ ChangeLog:
 dist: ChangeLog
 
 .PHONY: ChangeLog
+
+-include $(top_srcdir)/git.mk

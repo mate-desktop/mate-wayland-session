@@ -1,11 +1,6 @@
-install-data-local:
-	mkdir -p $(datadir)/firedecor
-	mkdir -p $(datadir)/firedecor/button-styles/
-	mkdir -p $(datadir)/firedecor/button-styles/mate/
-
 iconsdir = $(datadir)/firedecor/button-styles/mate/
 
-icons_DATA =						\
+dist_icons_DATA =						\
 	close.png						\
 	close-hovered.png				\
 	close-pressed.png				\
@@ -18,6 +13,7 @@ icons_DATA =						\
 
 
 EXTRA_DIST =		\
-	$(icons_DATA)	\
 	meson.build
 
+
+-include $(top_srcdir)/git.mk

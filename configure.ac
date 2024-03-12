@@ -33,16 +33,6 @@ data/mate/Makefile
 po/Makefile.in
 ])
 
-AC_ARG_ENABLE([schemas_compile],
- [AS_HELP_STRING([--enable-schemas_compile=yes|no],
-                 [Enable or disable recompiling schemas after installing the override file default is enabled, disable for distcheck or checkinstall etc])],
- [enable_schemas_compile="$enableval"],
- [enable_schemas_compile="yes"])
-
-AM_CONDITIONAL(COMPILE_SCHEMAS, [test "x$enable_schemas_compile" = "xyes"])
-AS_IF([test "x$enable_schemas_compile" = "xyes"],
-      [AC_DEFINE([COMPILE_SCHEMAS], [1], [Enable recompiling gschemas])])
-
 AC_OUTPUT
 
 dnl ==========================================================================
