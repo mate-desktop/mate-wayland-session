@@ -9,7 +9,6 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 dist_bin_SCRIPTS = mate-wayland.sh mate-wayland-components.sh
 
 EXTRA_DIST = \
-	MATE.desktop \
 	$(desktop_in_files) \
 	meson.build
 
