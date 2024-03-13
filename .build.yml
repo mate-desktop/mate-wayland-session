@@ -21,6 +21,7 @@ requires:
     - libxml2-dev
     - make
     - mate-common
+    - meson
     - yelp-tools
 
 variables:
