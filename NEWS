@@ -1,3 +1,7 @@
+### mate-wayland-session 1.28.3
+
+    *re-release due to failure to include release commit in 1.28.2 tag
+
 ### mate-wayland-session 1.28.2
 
     *ci: get Travis to finish builds and make distcheck
