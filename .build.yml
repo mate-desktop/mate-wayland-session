@@ -13,16 +13,15 @@ requires:
     - meson
     - redhat-rpm-config
 
-  ubuntu:
-    - autoconf-archive
+  debian:
+    # Useful URL: https://github.com/mate-desktop/debian-packages
     - autopoint
-    - clang
-    - clang-tools
     - gcc
     - git
+    - libxml2-dev
     - make
     - mate-common
-    - meson
+    - yelp-tools
 
 variables:
 
