@@ -2,7 +2,6 @@
 # THE FOLLOWING LINES IS USED BY docker-build
 ##########################################################
 requires:
-  
   fedora:
     # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-wayland-session.git
     - autoconf-archive
@@ -26,42 +25,12 @@ requires:
     - meson
 
 variables:
-  - 'CHECKERS="
-    -enable-checker deadcode.DeadStores
-    -enable-checker alpha.deadcode.UnreachableCode
-    -enable-checker alpha.core.CastSize
-    -enable-checker alpha.core.CastToStruct
-    -enable-checker alpha.core.IdenticalExpr
-    -enable-checker alpha.core.SizeofPtr
-    -enable-checker alpha.security.ArrayBoundV2
-    -enable-checker alpha.security.MallocOverflow
-    -enable-checker alpha.security.ReturnPtrRange
-    -enable-checker alpha.unix.SimpleStream
-    -enable-checker alpha.unix.cstring.BufferOverlap
-    -enable-checker alpha.unix.cstring.NotNullTerminated
-    -enable-checker alpha.unix.cstring.OutOfBounds
-    -enable-checker alpha.core.FixedAddr
-    -enable-checker security.insecureAPI.strcpy"'
 
 before_scripts:
 
 build_scripts:
 
   - NOCONFIGURE=1 ./autogen.sh
-  - scan-build $CHECKERS ./configure
-  - if [ $CPU_COUNT -gt 1 ]; then
-  -     if [ ${DISTRO_NAME} == "debian" ];then
-  -         scan-build $CHECKERS  -o html-report make -j $CPU_COUNT
-  -         make clean
-  -     fi
-  -     scan-build $CHECKERS --keep-cc -o html-report make -j $CPU_COUNT
-  - else
-  -     if [ ${DISTRO_NAME} == "debian" ];then
-  -         scan-build $CHECKERS -o html-report make
-  -         make clean
-  -     fi
-  -     scan-build $CHECKERS --keep-cc -o html-report make
-  - fi
 
 after_scripts:
 
@@ -72,7 +41,7 @@ releases:
   prerelease: false
   checksum: true
   file_glob: true
-  files: mate-terminal-*.tar.xz
+  files: mate-wayland-session-*.tar.xz
   github_release:
     tags: true
     overwrite: true
