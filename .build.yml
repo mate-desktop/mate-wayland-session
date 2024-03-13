@@ -30,7 +30,7 @@ before_scripts:
 
 build_scripts:
 
-  - NOCONFIGURE=1 ./autogen.sh
+  - ./autogen.sh
   - make -j
 
 after_scripts:
