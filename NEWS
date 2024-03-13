@@ -1,3 +1,12 @@
+### mate-wayland-session 1.28.1
+
+    *Build system fixes:
+    *Use git.mk to autogenerate .gitignore and enable make maintainer-clean
+    *Don't track or distribute generated .desktop
+    *meson: Generate MATE.desktop
+    *Cleanup how data files are distributed
+    *Compile schemas in the right directory
+
 ### mate-wayland-session 1.28.0
 
   *Update build system to allow creating releases with make distcheck and installing to /usr/local
