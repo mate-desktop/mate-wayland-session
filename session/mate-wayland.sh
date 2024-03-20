@@ -11,6 +11,8 @@ create_initial_config()
     else
         #User has not configured wayfire. Look for the default .ini file where the package manager put it 
         cp /usr/share/doc/wayfire/examples/wayfire.ini /home/$USER/.config/mate/wayfire.ini
+        #Ensure the file is writable as we try to alter it later
+        chmod u+w /home/$USER/.config/mate/wayfire.ini
         #Don't use wobbly windows by default, users can readily enable them with wcm
         sed -i '/  wobbly \\/d' /home/$USER/.config/mate/wayfire.ini
 
