@@ -39,6 +39,15 @@ done) &
 
 (pgrep "wayfire"
 while  true; do
+GDK_BACKEND=x11 mate-settings-daemon
+pgrep "wayfire"
+if [ $? -ne 0  ]; then
+       break
+fi
+done) &
+
+(pgrep "wayfire"
+while  true; do
 caja -n --force-desktop
 pgrep "wayfire"
 if [ $? -ne 0  ]; then
