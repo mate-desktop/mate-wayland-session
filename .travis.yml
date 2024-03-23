@@ -58,18 +58,18 @@ deploy:
       condition: "${TRAVIS_TAG} =~ ^v.*$ && ${DISTRO} =~ ^fedora.*$"
 
 after_success:
-  - 'if [[ "$TRAVIS_SECURE_ENV_VARS" == "true" && "$TRAVIS_PULL_REQUEST" != "false" && ${DISTRO} =~ ^fedora.*$ ]]; then
-        REPO_SLUG_ARRAY=(${TRAVIS_REPO_SLUG//\// });
-        REPO_NAME=${REPO_SLUG_ARRAY[1]};
-        URL="https://${REPO_NAME}.mate-desktop.dev";
-        COMMENT="Code analysis completed";
-        curl -H "Authorization: token $GITHUB_TOKEN" -X POST
-           -d "{\"state\": \"success\", \"description\": \"$COMMENT\", \"context\":\"scan-build\", \"target_url\": \"$URL\"}"
-           https://api.github.com/repos/${TRAVIS_REPO_SLUG}/statuses/${TRAVIS_PULL_REQUEST_SHA};
-     fi'
+#  - 'if [[ "$TRAVIS_SECURE_ENV_VARS" == "true" && "$TRAVIS_PULL_REQUEST" != "false" && ${DISTRO} =~ ^fedora.*$ ]]; then
+#        REPO_SLUG_ARRAY=(${TRAVIS_REPO_SLUG//\// });
+#        REPO_NAME=${REPO_SLUG_ARRAY[1]};
+#        URL="https://${REPO_NAME}.mate-desktop.dev";
+#        COMMENT="Code analysis completed";
+#        curl -H "Authorization: token $GITHUB_TOKEN" -X POST
+#           -d "{\"state\": \"success\", \"description\": \"$COMMENT\", \"context\":\"scan-build\", \"target_url\": \"$URL\"}"
+#           https://api.github.com/repos/${TRAVIS_REPO_SLUG}/statuses/${TRAVIS_PULL_REQUEST_SHA};
+#     fi'
 
 env:
 #  - DISTRO="archlinux:latest"
-#  - DISTRO="debian:testing"
+  - DISTRO="debian:testing"
   - DISTRO="fedora:latest"
 #  - DISTRO="ubuntu:rolling"
