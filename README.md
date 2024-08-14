@@ -56,12 +56,16 @@ A gsettings override file sets the MATE icon theme and Menta GTK theme, and turn
 
 Install the "Firedecor" plugin for a window decorator theme similar to the Menta Marco theme in X11. If not installed, Wayfire's default SSD decoration theme is used.
 
-- **Future Development**: Another decorator under development can read Marco themes from [wf-external-decoration](https://github.com/marcof-nikogo/wf-external-decoration).
-- **Default to SSD**: Server-side decoration is preferred due to issues with CSD on MATE apps.
+- **Future Development**: Another decorator under development can read Marco themes from [wf-external-decoration](https://github.com/marcof-nikogo/wf-external-decoration) and with a simpler system and more reliable functioning
+but not rendering quite as well from [[wf-external-decoration](https://github.com/marcof-nikogo/metacity-decor)
 
-### ❌ No XSettings Manager
+- **Default to SSD for now**: Server-side decoration is preferred due to issues with CSD on MATE apps.
 
-Wayland compositors control more of the session than X11 window managers. Wayfire in Wayland handles much of what Marco, mate-session-manager, and mate-settings-daemon do in X11.
+- **Default to CSD will be possible in the future**: Recent developments in caja fixed the window move/resize issue under CSD. Note that wayfire's CSD will follow the GTK theme's port of the metacity theme in all of the MATE themes and many others.
+
+### XSettings Manager still used but only for Xwayland apps which otherwise follow GTK defaults
+
+Wayland compositors control more of the session than X11 window managers. Wayfire in Wayland handles much of what Marco, mate-session-manager, and mate-settings-daemon do in X11. Non-wayland supporting apps such as GTK2 apps run under Xwayland, these still benefit from having a running xsettings manager itself under xwayland
 
 ## 📂 Wayfire Configuration Manager (WCM) Recommended
 
