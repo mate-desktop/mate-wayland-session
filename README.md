@@ -44,13 +44,6 @@ This is a simple and experimental MATE session using Wayfire, a Wayland composit
 - **GSettings**: GNOME, not MATE, gsettings preferences apply for fonts and icon themes under Wayland. For XWayland apps, MATE settings are applied.
 - **GTK Options**: Many options selectable in X11 are hardcoded in Wayland. For example, headerbars on dialogs clash with the MATE UI and can be fixed by installing [GTK 3 with gtk3-classic patches](https://github.com/lah7/gtk3-classic).
 
-### 🔧 Showing icons in menus
-
-Under Wayland, GTK will not "menus-have-icons" from MATE gsettings as wayland compositors read the GNOME gsettings instead. We fix this
-by installing a settings.ini file systemwide as /etc/gtk-3.0/settings.ini 
-This installation path is hardcoded to ensure GTK can find it
-If you wish to disable icons in menus, copy the file to ~/.config/gtk-3.0/settings.ini and change the value of gtk-menu-images from true to false
-
 ### 🔧 Setting Themes and Fonts
 
 Use `dconf-editor` to reset the GTK theme, icon theme, and fonts in `org/gnome/desktop/interface`. Apply preferences under both MATE and GNOME to theme Wayland and XWayland apps consistently.

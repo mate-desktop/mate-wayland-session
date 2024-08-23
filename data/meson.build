@@ -6,8 +6,4 @@ install_data('firedecor.config',
  install_dir: join_paths(get_option('datadir'), 'doc', 'firedecor'),
 )
 
-install_data('settings.ini',
- install_dir: join_paths(get_option('sysconfdir'), 'gtk-3.0'),
-)
-
 subdir('mate')
