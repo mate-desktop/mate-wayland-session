@@ -63,6 +63,8 @@ but not rendering quite as well from [[wf-external-decoration](https://github.co
 
 - **Default to CSD will be possible in the future**: Recent developments in caja fixed the window move/resize issue under CSD. Note that wayfire's CSD will follow the GTK theme's port of the metacity theme in all of the MATE themes and many others.
 
+- **Preference for CSD can be set by user if using caja from git master**: Gives better decoration theming in some GTK themes but still requires the SSD theme to handle Xwayland windows
+
 ### XSettings Manager still used but only for Xwayland apps which otherwise follow GTK defaults
 
 Wayland compositors control more of the session than X11 window managers. Wayfire in Wayland handles much of what Marco, mate-session-manager, and mate-settings-daemon do in X11. Non-wayland supporting apps such as GTK2 apps run under Xwayland, these still benefit from having a running xsettings manager itself under xwayland
@@ -70,3 +72,7 @@ Wayland compositors control more of the session than X11 window managers. Wayfir
 ## 📂 Wayfire Configuration Manager (WCM) Recommended
 
 Wayfire Configuration Manager provides a GUI similar to CCSM for Compiz, allowing control over many options managed by the compositor in a Wayland session.
+
+### Known issues
+
+Do not set Application ID Mode in workarounds to anything other than it's default of "stock" as doing so will prevent mate-panel's window list from finding the application icons
