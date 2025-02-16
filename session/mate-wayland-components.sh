@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #make sure we can find anything normally installed in libexec even if installed elsewhere
-export PATH=$PATH:/usr/local/libexec:/usr/libexec
+export PATH="$PATH:/usr/local/libexec:/usr/libexec"
 
 #Set up dbus
 
@@ -13,8 +13,8 @@ hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-en
 (pgrep "wayfire"
 while true; do
 mate-panel
-pgrep "wayfire"
-if [ $? -ne 0  ]; then
+
+if ! pgrep "wayfire" ; then
        break
 fi
 done) &
@@ -22,8 +22,8 @@ done) &
 (pgrep "wayfire"
 while true; do
 polkit-mate-authentication-agent-1
-pgrep "wayfire"
-if [ $? -ne 0  ]; then
+
+if ! pgrep "wayfire" ; then
        break
 fi
 done) &
@@ -31,8 +31,8 @@ done) &
 (pgrep "wayfire"
 while  true; do
 mate-notification-daemon
-pgrep "wayfire"
-if [ $? -ne 0  ]; then
+
+if ! pgrep "wayfire" ; then
        break
 fi
 done) &
@@ -40,8 +40,8 @@ done) &
 (pgrep "wayfire"
 while  true; do
 GDK_BACKEND=x11 mate-settings-daemon
-pgrep "wayfire"
-if [ $? -ne 0  ]; then
+
+if ! pgrep "wayfire" ; then
        break
 fi
 done) &
@@ -49,20 +49,20 @@ done) &
 (pgrep "wayfire"
 while  true; do
 caja -n --force-desktop
-pgrep "wayfire"
-if [ $? -ne 0  ]; then
+
+if ! pgrep "wayfire" ; then
        break
 fi
 done) &
 
 #Programs to start once (if we have them), matching Xorg behavior
 nm-applet --indicator &
-cat /usr/bin/blueman-applet > /dev/null
-if [ $? -eq 0  ]; then
+
+if ! cat /usr/bin/blueman-applet > /dev/null ; then
     blueman-applet &
 fi
-cat /usr/bin/gnome-keyring-daemon > /dev/null
-if [ $? -eq 0  ]; then
+
+if ! cat /usr/bin/gnome-keyring-daemon > /dev/null ; then
     gnome-keyring-daemon --start --components=pkcs11 &
     #Run the last process in the foreground to ensure a normal session exit
     gnome-keyring-daemon --start --components=ssh 
