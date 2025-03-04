@@ -5,8 +5,8 @@ export PATH="$PATH:/usr/local/libexec:/usr/libexec"
 
 #Set up dbus
 
-systemctl --user import-environment DISPLAY WAYLAND_DISPLAY
-hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
+systemctl --user import-environment
+hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment
 
 #Programs to restart while compositor is running, matching Xorg behavior
 
@@ -47,8 +47,9 @@ fi
 done) &
 
 (pgrep "wayfire"
+export XDG_CURRENT_DESKTOP="MATE"
 while  true; do
-caja -n --force-desktop
+caja -n
 
 if ! pgrep "wayfire" ; then
        break
