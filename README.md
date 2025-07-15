@@ -6,26 +6,6 @@ Wayland session using Wayfire for the MATE desktop
 
 You need Wayfire installed to run this session, as the startup script and configuration file are Wayfire-specific. Autotools or Meson will install the files in the correct places.
 
-## 🔥 Wayfire Firedecor Plugin Recommended
-
-It is recommended to install the Firedecor Wayfire plugin. This allows the use of a window decorator theme similar to the Menta Marco theme. If unavailable, the session will still work. The initial setup will not attempt to set a MATE-specific window decoration theme but will do everything else the same way.
-
-## 📝 Notes on Install Directories for Firedecor Theme
-
-To use the Menta style window control buttons instead of Firedecor's default buttons, ensure the data directory used in installing mate-wayland-session matches the one used by Firedecor. Here are some scenarios:
-
-1. **Firedecor installed to `/usr`, mate-wayland-session installed to `/usr`**: Menta window buttons on first run.
-   - Common when installed from distro packages.
-
-2. **Firedecor installed to `/usr/local`, mate-wayland-session installed to `/usr/local`**: Menta window buttons on first run.
-   - Common for local builds installed to `/usr/local`.
-
-3. **Firedecor installed to `/usr`, mate-wayland-session installed to `/usr/local`**: Firedecor default window buttons used on first run.
-   - To show Menta buttons, copy or symlink buttons from `/usr/local/firedecor/button-styles/mate/` to `/usr/firedecor/button-styles/mate/`.
-
-4. **Firedecor installed to `/usr/local`, mate-wayland-session installed to `/usr`**: Firedecor default window buttons used on first run.
-   - Copy or symlink buttons from `/usr/firedecor/button-styles/mate/` to `/usr/local/firedecor/button-styles/mate/`.
-
 ## 🐞 Reporting Bugs and Submitting Patches
 
 Report new bugs on [GitHub](https://github.com/mate-desktop/mate-wayland-session). Please check for duplicates, especially for feature requests.
@@ -37,7 +17,7 @@ This is a simple and experimental MATE session using Wayfire, a Wayland composit
 - **Display Managers**: Tested and known to work under SDDM, should work with any Wayland-supporting display manager.
 - **Session Launcher**: A script (`mate-wayland-components.sh`) launches MATE programs inside Wayfire. This session cannot run simultaneously with an X11 session using dbus on another TTY.
 - **Startup Configuration**: Edit `~/.config/wayfire.ini` to add `mate-wayland-components.sh` and disable the default Wayfire shell.
-- **Components**: Starts MATE components like Caja and Mate-panel without interfering with other parts of the user's Wayfire configuration.
+- **Components**: Starts MATE components like Caja and Mate-panel without interfering with other parts of any existing Wayfire configuration
 
 ### 🛠 Configuration
 
@@ -54,16 +34,15 @@ A gsettings override file sets the MATE icon theme and Menta GTK theme, and turn
 
 ### 🎨 Window Decoration
 
-Install the "Firedecor" plugin for a window decorator theme similar to the Menta Marco theme in X11. If not installed, Wayfire's default SSD decoration theme is used.
+We no longer replace wayfire's default CSD with SSD for native wayland windows as it looks
+far better than the default decorator and follows marco themes as now defined in the GTK theme
+quite well
+
+The Wayfire Firedecor Plugin  is no longer supported upstream
+The default decoration plugin is now used instead, but is only needed for xwayland windows
 
 - **Future Development**: Another decorator under development can read Marco themes from [wf-external-decoration](https://github.com/marcof-nikogo/wf-external-decoration) and with a simpler system and more reliable functioning
-but not rendering quite as well from [[wf-external-decoration](https://github.com/marcof-nikogo/metacity-decor)
-
-- **Default to SSD for now**: Server-side decoration is preferred due to issues with CSD on MATE apps.
-
-- **Default to CSD will be possible in the future**: Recent developments in caja fixed the window move/resize issue under CSD. Note that wayfire's CSD will follow the GTK theme's port of the metacity theme in all of the MATE themes and many others.
-
-- **Preference for CSD can be set by user if using caja from git master**: Gives better decoration theming in some GTK themes but still requires the SSD theme to handle Xwayland windows
+but not rendering quite as well from (https://github.com/marcof-nikogo/metacity-decor)
 
 ### XSettings Manager still used but only for Xwayland apps which otherwise follow GTK defaults
 
