@@ -29,8 +29,6 @@ create_initial_config()
         sed -i 's/autostart_wf_shell = true.*/autostart_wf_shell = false/' "/home/$USER/.config/mate/wayfire.ini"
         #DO start the background though
         sed -i '/autostart]/a background = wf-background' "/home/$USER/.config/mate/wayfire.ini"
-        #Use server-side decoration (SSD) by default as CSD is broken with caja
-        sed -i 's/preferred_decoration_mode = client.*/preferred_decoration_mode = server/' "/home/$USER/.config/mate/wayfire.ini"
         #Use wayfire's workaround to disable forcing all dialogs to modal
         sed -i 's/all_dialogs_modal = true.*/all_dialogs_modal = false/' "/home/$USER/.config/mate/wayfire.ini"
     fi
