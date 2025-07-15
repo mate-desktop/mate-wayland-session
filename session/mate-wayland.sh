@@ -45,7 +45,11 @@ create_initial_config()
             sed -i '/  wobbly \\/d' "/home/$USER/.config/mate/wayfire.ini"
         fi
     fi
-
+    ##Fix Gtk+3 applications slow startup or .desktop files not opening
+    #https://github.com/WayfireWM/wayfire/wiki/Tips-&-Tricks#gtk3-applications-slow-startup-or-desktop-files-not-opening
+    if ! grep "dbus-update-activation-environment" "/home/$USER/.config/mate/wayfire.ini" ; then
+         sed -i '/autostart]/a 0_env = dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY' "/home/$USER/.config/mate/wayfire.ini"
+    fi
     #Add mate-wayland-components.sh to wayfire startup programs and set sane session defaults
     if ! grep "mate-wayland-components" "/home/$USER/.config/mate/wayfire.ini" ; then
         sed -i '/autostart]/a mate = mate-wayland-components.sh' "/home/$USER/.config/mate/wayfire.ini"

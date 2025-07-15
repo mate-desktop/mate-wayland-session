@@ -3,10 +3,12 @@
 #make sure we can find anything normally installed in libexec even if installed elsewhere
 export PATH="$PATH:/usr/local/libexec:/usr/libexec"
 
+# This is no longer needed on new installs as wayfire.ini now does this for us
+# But run it if an existing ~/config/mate/mate-wayfire.ini file does not include it
+if !(grep  dbus-update-activation-environment /home/$USER/.config/mate/wayfire.ini); then 
 #Set up dbus
-
-systemctl --user import-environment
-hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY ;
+fi
 
 #Programs to restart while compositor is running, matching Xorg behavior
 
