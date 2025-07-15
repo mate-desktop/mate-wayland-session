@@ -1,6 +1,3 @@
-SUBDIRS = \
-	mate
-
 settingsdir =  $(datadir)/glib-2.0/schemas/
 dist_settings_DATA = 10_mate-wayland.gschema.override
 
