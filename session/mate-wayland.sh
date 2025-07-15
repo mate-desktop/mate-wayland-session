@@ -16,34 +16,6 @@ create_initial_config()
         #Don't use wobbly windows by default, users can readily enable them with wcm
         sed -i '/  wobbly \\/d' "/home/$USER/.config/mate/wayfire.ini"
 
-        #Default to using firedecor and the menta theme if we have firedecor installed
-        if [ -e  /usr/lib/x86_64-linux-gnu/wayfire/libfiredecor.so ]; then
-            cat /usr/share/doc/wayfire/examples/wayfire.ini /usr/share/doc/firedecor/firedecor.config \
-            > "/home/$USER/.config/mate/wayfire.ini"
-            sed -i 's/decoration \\.*/firedecor \\/' "/home/$USER/.config/mate/wayfire.ini"
-            sed -i '/  wobbly \\/d' "/home/$USER/.config/mate/wayfire.ini"
-        fi
-
-        if [ -e  /usr/lib/wayfire/libfiredecor.so ]; then
-            cat /usr/share/doc/wayfire/examples/wayfire.ini /usr/share/doc/firedecor/firedecor.config \
-            > "/home/$USER/.config/mate/wayfire.ini"
-            sed -i 's/decoration \\.*/firedecor \\/' "/home/$USER/.config/mate/wayfire.ini"
-            sed -i '/  wobbly \\/d' "/home/$USER/.config/mate/wayfire.ini"
-        fi
-        #Check /usr/local for installs of firedecor as well
-        if [ -e  /usr/local/lib/x86_64-linux-gnu/wayfire/libfiredecor.so ]; then
-            cat /usr/local/share/doc/wayfire/examples/wayfire.ini /usr/local/share/doc/firedecor/firedecor.config \
-            > "/home/$USER/.config/mate/wayfire.ini"
-            sed -i 's/decoration \\.*/firedecor \\/' "/home/$USER/.config/mate/wayfire.ini"
-            sed -i '/  wobbly \\/d' "/home/$USER/.config/mate/wayfire.ini"
-        fi
-
-        if [ -e  /usr/local/lib/wayfire/libfiredecor.so ]; then
-            cat /usr/local/share/doc/wayfire/examples/wayfire.ini /usr/local/share/doc/firedecor/firedecor.config \
-            > "/home/$USER/.config/mate/wayfire.ini"
-            sed -i 's/decoration \\.*/firedecor \\/' "/home/$USER/.config/mate/wayfire.ini"
-            sed -i '/  wobbly \\/d' "/home/$USER/.config/mate/wayfire.ini"
-        fi
     fi
     ##Fix Gtk+3 applications slow startup or .desktop files not opening
     #https://github.com/WayfireWM/wayfire/wiki/Tips-&-Tricks#gtk3-applications-slow-startup-or-desktop-files-not-opening
