@@ -29,7 +29,6 @@ AC_CONFIG_FILES([
 Makefile
 session/Makefile
 data/Makefile
-data/mate/Makefile
 po/Makefile.in
 ])
 
