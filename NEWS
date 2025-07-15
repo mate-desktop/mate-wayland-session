@@ -1,3 +1,13 @@
+### mate-wayland-session 1.28.4
+
+    *Remove firedecor leftovers
+    *Document recent changes in window management and startup
+    *Use wayland's built-in client-side decorator by default
+    *Don't use firedecor, it's no longer supported
+    *Only set up dbus ourselves if user config is too old
+
+### mate-wayland-session 1.28.2
+
 ### mate-wayland-session 1.28.3
 
     *re-release due to failure to include release commit in 1.28.2 tag
