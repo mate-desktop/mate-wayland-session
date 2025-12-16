@@ -31,6 +31,9 @@ create_initial_config()
         sed -i '/autostart]/a background = wf-background' "/home/$USER/.config/mate/wayfire.ini"
         #Use wayfire's workaround to disable forcing all dialogs to modal
         sed -i 's/all_dialogs_modal = true.*/all_dialogs_modal = false/' "/home/$USER/.config/mate/wayfire.ini"
+        #Replace wofi with mate-panel's own run dialog
+        sed -i 's/binding_launcher = <super> <shift> KEY_ENTER.*/binding_launcher = <alt> KEY_F2/' "/home/$USER/.config/mate/wayfire.ini"
+        sed -i 's/command_launcher = wofi.*/command_launcher = mate-panel --run-dialog/' "/home/$USER/.config/mate/wayfire.ini"
     fi
 
     return 0
