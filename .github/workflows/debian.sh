@@ -20,6 +20,7 @@ requires+=(
 	autopoint
 	gcc
 	git
+	libglib2.0-dev-bin
 	libxml2-dev
 	make
 	mate-common
