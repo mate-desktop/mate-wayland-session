@@ -8,6 +8,7 @@ AC_INIT([mate-wayland-session],
         [https://mate-desktop.org])
 
 AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz tar-ustar check-news])
+AC_CONFIG_MACRO_DIRS([m4])
 
 # Enable silent build rules by default, requires at least
 # Automake-1.11. Disable by either passing --disable-silent-rules to
