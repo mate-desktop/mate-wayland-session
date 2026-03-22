@@ -1,39 +1,41 @@
-#!/bin/sh
+#!/bin/bash
 
 create_initial_config()
     {
-    mkdir -p "/home/$USER/.config/mate"
+    mkdir -p "$HOME/.config/mate"
 
     #Find any existing wayfire.ini file
-    if [ -e  "/home/$USER/.config/wayfire.ini" ]; then
+    if [ -e "$HOME/.config/wayfire.ini" ]; then
         #User has configured wayfire, use their file and existing customizations
-        cp "/home/$USER/.config/wayfire.ini" "/home/$USER/.config/mate/wayfire.ini"
+        cp "$HOME/.config/wayfire.ini" "$HOME/.config/mate/wayfire.ini"
     else
-        #User has not configured wayfire. Look for the default .ini file where the package manager put it 
-        cp /usr/share/doc/wayfire/examples/wayfire.ini "/home/$USER/.config/mate/wayfire.ini"
+        #User has not configured wayfire. Look for the default .ini file where the package manager put it
+        WAYFIRE_EXAMPLE=/usr/share/doc/wayfire/examples/wayfire.ini
+        [ -e "$WAYFIRE_EXAMPLE" ] || WAYFIRE_EXAMPLE=/usr/share/wayfire/examples/wayfire.ini
+        cp "$WAYFIRE_EXAMPLE" "$HOME/.config/mate/wayfire.ini"
         #Ensure the file is writable as we try to alter it later
-        chmod u+w "/home/$USER/.config/mate/wayfire.ini"
+        chmod u+w "$HOME/.config/mate/wayfire.ini"
         #Don't use wobbly windows by default, users can readily enable them with wcm
-        sed -i '/  wobbly \\/d' "/home/$USER/.config/mate/wayfire.ini"
+        sed -i '/  wobbly \\/d' "$HOME/.config/mate/wayfire.ini"
 
     fi
     ##Fix Gtk+3 applications slow startup or .desktop files not opening
     #https://github.com/WayfireWM/wayfire/wiki/Tips-&-Tricks#gtk3-applications-slow-startup-or-desktop-files-not-opening
-    if ! grep "dbus-update-activation-environment" "/home/$USER/.config/mate/wayfire.ini" ; then
-         sed -i '/autostart]/a 0_env = dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY' "/home/$USER/.config/mate/wayfire.ini"
+    if ! grep -q "dbus-update-activation-environment" "$HOME/.config/mate/wayfire.ini" ; then
+         sed -i '/autostart]/a 0_env = dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY' "$HOME/.config/mate/wayfire.ini"
     fi
     #Add mate-wayland-components.sh to wayfire startup programs and set sane session defaults
-    if ! grep "mate-wayland-components" "/home/$USER/.config/mate/wayfire.ini" ; then
-        sed -i '/autostart]/a mate = mate-wayland-components.sh' "/home/$USER/.config/mate/wayfire.ini"
+    if ! grep -q "mate-wayland-components" "$HOME/.config/mate/wayfire.ini" ; then
+        sed -i '/autostart]/a mate = mate-wayland-components.sh' "$HOME/.config/mate/wayfire.ini"
         #do not start wayfire's default shell if installed
-        sed -i 's/autostart_wf_shell = true.*/autostart_wf_shell = false/' "/home/$USER/.config/mate/wayfire.ini"
+        sed -i 's/autostart_wf_shell = true.*/autostart_wf_shell = false/' "$HOME/.config/mate/wayfire.ini"
         #DO start the background though
-        sed -i '/autostart]/a background = wf-background' "/home/$USER/.config/mate/wayfire.ini"
+        sed -i '/autostart]/a background = wf-background' "$HOME/.config/mate/wayfire.ini"
         #Use wayfire's workaround to disable forcing all dialogs to modal
-        sed -i 's/all_dialogs_modal = true.*/all_dialogs_modal = false/' "/home/$USER/.config/mate/wayfire.ini"
+        sed -i 's/all_dialogs_modal = true.*/all_dialogs_modal = false/' "$HOME/.config/mate/wayfire.ini"
         #Replace wofi with mate-panel's own run dialog
-        sed -i 's/binding_launcher = <super> <shift> KEY_ENTER.*/binding_launcher = <alt> KEY_F2/' "/home/$USER/.config/mate/wayfire.ini"
-        sed -i 's/command_launcher = wofi.*/command_launcher = mate-panel --run-dialog/' "/home/$USER/.config/mate/wayfire.ini"
+        sed -i 's/binding_launcher = <super> <shift> KEY_ENTER.*/binding_launcher = <alt> KEY_F2/' "$HOME/.config/mate/wayfire.ini"
+        sed -i 's/command_launcher = wofi.*/command_launcher = mate-panel --run-dialog/' "$HOME/.config/mate/wayfire.ini"
     fi
 
     return 0
@@ -42,7 +44,7 @@ create_initial_config()
 check_config_file()
 
     {
-    if [ -e  "/home/$USER/.config/mate/wayfire.ini" ]; then
+    if [ -e "$HOME/.config/mate/wayfire.ini" ]; then
         #If we have already configured wayfire for MATE do not alter the file
         return 0
     else
@@ -56,9 +58,7 @@ check_config_file()
 check_config_file
 
 # Set XDG_CURRENT_DESKTOP
-
 export XDG_CURRENT_DESKTOP="MATE"
 
 #Start the compositor
-wayfire -c "/home/$USER/.config/mate/wayfire.ini"
-
+wayfire -c "$HOME/.config/mate/wayfire.ini"
