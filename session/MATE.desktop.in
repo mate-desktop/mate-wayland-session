@@ -1,10 +1,11 @@
 [Desktop Entry]
-Name=MATE on Wayfire
-Comment=This session logs you into MATE using the wayfire wayland compositor
+Name=MATE (Wayland)
+Comment=This session logs you into MATE using the Wayfire Wayland compositor
 Exec=mate-wayland.sh
 TryExec=mate-wayland.sh
-Icon=
+Icon=mate
 Type=Application
 DesktopNames=MATE
+X-GDM-SessionRegisters=true
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-Keywords=launch;MATE;desktop;session;
+Keywords=launch;MATE;desktop;session;wayland;
