@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #make sure we can find anything normally installed in libexec even if installed elsewhere
 export PATH="$PATH:/usr/local/libexec:/usr/libexec"
