@@ -1,3 +1,14 @@
+### mate-wayland-session 1.28.5
+
+    *Partial translation update
+    *Do not depend on bash, use the system shell
+    *session: refactor scripts and fix duplicate cursor
+    *session: improve desktop file metadata
+    *Only set up dbus ourselves if user config is too old
+    *Enable mate-panel's run dialog alt-f2 keybinding by default
+    *Fix build
+    *Remove more firedecor leftovers
+
 ### mate-wayland-session 1.28.4
 
     *Remove firedecor leftovers
@@ -5,8 +16,6 @@
     *Use wayland's built-in client-side decorator by default
     *Don't use firedecor, it's no longer supported
     *Only set up dbus ourselves if user config is too old
-
-### mate-wayland-session 1.28.2
 
 ### mate-wayland-session 1.28.3
 

@@ -1,5 +1,5 @@
 project('mate-wayland-session',
-  version: '1.28.4',
+  version: '1.28.5',
   meson_version: '>=0.56.0',
   license: 'GPLv2+',
 )
