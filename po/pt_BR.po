@@ -5,14 +5,15 @@
 # 
 # Translators:
 # Vitor Henrique, 2024
+# Rafael Mazzutti <rafaelmazz22@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-wayland-session 1.27.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-wayland-session/issues\n"
-"POT-Creation-Date: 2024-02-22 10:57+0100\n"
+"POT-Creation-Date: 2024-02-21 15:33-0500\n"
 "PO-Revision-Date: 2024-02-22 10:20+0000\n"
-"Last-Translator: Vitor Henrique, 2024\n"
+"Last-Translator: Rafael Mazzutti <rafaelmazz22@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/mate/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,11 +23,11 @@ msgstr ""
 
 #: session/MATE.desktop:3
 msgid "MATE on Wayfire"
-msgstr ""
+msgstr "MATE em Wayfire"
 
 #: session/MATE.desktop:4
 msgid "This session logs you into MATE using the wayfire wayland compositor"
-msgstr ""
+msgstr "Esta sessão faz login no MATE utilizando o compositor wayland wayfire"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
