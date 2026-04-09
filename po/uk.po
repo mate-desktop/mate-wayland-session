@@ -4,16 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# dsafsadf <heneral@gmail.com>, 2025
-# Serhii <sergiy@gorichenko.com>, 2025
+# Микола Ткач <chistomov@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-wayland-session 1.27.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-wayland-session/issues\n"
-"POT-Creation-Date: 2024-02-21 15:33-0500\n"
+"POT-Creation-Date: 2024-02-22 10:57+0100\n"
 "PO-Revision-Date: 2024-02-22 10:20+0000\n"
-"Last-Translator: Serhii <sergiy@gorichenko.com>, 2025\n"
+"Last-Translator: Микола Ткач <chistomov@gmail.com>, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,15 +22,14 @@ msgstr ""
 
 #: session/MATE.desktop:3
 msgid "MATE on Wayfire"
-msgstr "MATE на Wayfire"
+msgstr ""
 
 #: session/MATE.desktop:4
 msgid "This session logs you into MATE using the wayfire wayland compositor"
 msgstr ""
-"У цьому сеансі ви входите в MATE за допомогою композитора wayfire wayland"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: session/MATE.desktop:11
 msgid "launch;MATE;desktop;session;"
-msgstr "запуск;MATE;стільниця;сесія;робочий стіл;сеанс;"
+msgstr "запуск;MATE;стільниця;сесія;"
