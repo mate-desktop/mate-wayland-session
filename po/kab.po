@@ -1,0 +1,34 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-wayland-session package.
+# ButterflyOfFire <butterflyoffire@users.noreply.translate.fedoraproject.org>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: mate-wayland-session 1.28.5\n"
+"Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-wayland-session/"
+"issues\n"
+"POT-Creation-Date: 2026-04-02 21:47+0200\n"
+"PO-Revision-Date: 2026-06-13 19:27+0000\n"
+"Last-Translator: ButterflyOfFire "
+"<butterflyoffire@users.noreply.translate.fedoraproject.org>\n"
+"Language-Team: Kabyle <https://translate.fedoraproject.org/projects/mate-"
+"desktop/mate-wayland-session/kab/>\n"
+"Language: kab\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2026.6.1\n"
+
+#: session/MATE.desktop.in:3
+msgid "MATE (Wayland)"
+msgstr "MATE (Wayland)"
+
+#: session/MATE.desktop.in:4
+msgid "This session logs you into MATE using the Wayfire Wayland compositor"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: session/MATE.desktop.in:12
+msgid "launch;MATE;desktop;session;wayland;"
+msgstr "sekker;MATE;tanarit;tiɣimit;wayland;"
