@@ -8,6 +8,12 @@ Wayland session using Wayfire for the MATE desktop
 
 You need Wayfire installed to run this session, as the startup script and configuration file are Wayfire-specific. Autotools or Meson will install the files in the correct places.
 
+## 📦 New: mate-settings-daemon 1.29.1 or later required
+The newest versions of mate-settings-daemon and mate-control-center provide wlrandr support in the display capplet and display m-s-d plugin, plus background and clipboard plugin support. We now run mate-settings-daemon in native wayland to support this. This REQUIRES mate-settings-daemon 1.29.1 or later to work. If older mate-settings-daemon is present instead, the subshell that starts/restarts mate-settings-daemon will waste CPU cycles in an endless loop.
+
+Generally, Wayland compositors control more of the session than X11 window managers. Wayfire in Wayland handles much of what Marco, mate-session-manager, and mate-settings-daemon do in X11. Non-wayland supporting apps such as GTK2 apps run under Xwayland, these still benefit from having a running xsettings manager itself under xwayland
+
+
 ## 🐞 Reporting Bugs and Submitting Patches
 
 Report new bugs on [GitHub](https://github.com/mate-desktop/mate-wayland-session). Please check for duplicates, especially for feature requests.
@@ -42,13 +48,6 @@ quite well
 
 The Wayfire Firedecor Plugin  is no longer supported upstream
 The default decoration plugin is now used instead, but is only needed for xwayland windows
-
-- **Future Development**: Another decorator under development can read Marco themes from [wf-external-decoration](https://github.com/marcof-nikogo/wf-external-decoration) and with a simpler system and more reliable functioning
-but not rendering quite as well from (https://github.com/marcof-nikogo/metacity-decor)
-
-### XSettings Manager still used but only for Xwayland apps which otherwise follow GTK defaults
-
-Wayland compositors control more of the session than X11 window managers. Wayfire in Wayland handles much of what Marco, mate-session-manager, and mate-settings-daemon do in X11. Non-wayland supporting apps such as GTK2 apps run under Xwayland, these still benefit from having a running xsettings manager itself under xwayland
 
 ## 📂 Wayfire Configuration Manager (WCM) Recommended
 
