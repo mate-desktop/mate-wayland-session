@@ -22,7 +22,7 @@ restart_while_running() {
 restart_while_running mate-panel &
 restart_while_running polkit-mate-authentication-agent-1 &
 restart_while_running mate-notification-daemon &
-restart_while_running env GDK_BACKEND=x11 mate-settings-daemon &
+restart_while_running mate-settings-daemon &
 restart_while_running caja -n &
 
 #Programs to start once (if we have them), matching Xorg behavior
