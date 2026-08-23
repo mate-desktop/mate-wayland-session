@@ -24,7 +24,7 @@ This is a simple and experimental MATE session using Wayfire, a Wayland composit
 
 - **Display Managers**: Tested and known to work under SDDM, should work with any Wayland-supporting display manager.
 - **Session Launcher**: A script (`mate-wayland-components.sh`) launches MATE programs inside Wayfire. This session cannot run simultaneously with an X11 session using dbus on another TTY.
-- **Startup Configuration**: Edit `~/.config/wayfire.ini` to add `mate-wayland-components.sh` and disable the default Wayfire shell.
+- **Startup Configuration**: First run copies `~/.config/wayfire.ini` to  `~/.config/mate/wayfire.ini`, adds `mate-wayland-components.sh` and disables the default Wayfire shell. A few other MATE defaults are also applied.
 - **Components**: Starts MATE components like Caja and Mate-panel without interfering with other parts of any existing Wayfire configuration
 
 ### 🛠 Configuration
