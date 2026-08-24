@@ -1,7 +1,18 @@
+### mate-wayland-session 1.29.1
+    *Translated using Weblate (Kazakh) (#35)
+    *README.md: Fix an old error
+
 ### mate-wayland-session 1.29.0
     *Update README
     *Run mate-sessions-daemon in native wayland
     *Translations update from Fedora Weblate (#33)
+    *Bump actions/checkout from 6 to 7
+    *remove empty po file
+    *Adding Weblate badge in README
+    *retrieve last transifex translations
+    *Revert "Retrieve last transifex translations"
+    *Retrieve last transifex translations
+    *Refers to mate-desktop/mate-terminal#487
 
 ### mate-wayland-session 1.28.5
 

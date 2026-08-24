@@ -2,7 +2,7 @@
 AC_PREREQ(2.53)
 
 AC_INIT([mate-wayland-session],
-        [1.29.0],
+        [1.29.1],
         [https://github.com/mate-desktop/mate-wayland-session/issues],
         [mate-wayland-session],
         [https://mate-desktop.org])
