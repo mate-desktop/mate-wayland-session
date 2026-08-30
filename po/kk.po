@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-wayland-session/"
 "issues\n"
 "POT-Creation-Date: 2026-04-02 21:47+0200\n"
-"PO-Revision-Date: 2026-08-24 07:18+0000\n"
+"PO-Revision-Date: 2026-08-30 04:18+0000\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <https://translate.fedoraproject.org/projects/mate-"
 "desktop/applications/mate-wayland-session/kk/>\n"
@@ -26,8 +26,9 @@ msgstr "MATE (Wayland)"
 #: session/MATE.desktop.in:4
 msgid "This session logs you into MATE using the Wayfire Wayland compositor"
 msgstr ""
+"Бұл сеанс Wayfire Wayland композиторын қолданып, MATE жүйесіне кіргізеді"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: session/MATE.desktop.in:12
 msgid "launch;MATE;desktop;session;wayland;"
-msgstr ""
+msgstr "іске қосу;MATE;жұмыс үстелі;сессия;wayland;"
