@@ -1,8 +1,9 @@
 [![Translation status](https://translate.fedoraproject.org/widget/mate-desktop/svg-badge.svg)](https://translate.fedoraproject.org/engage/mate-desktop/)
 
-# 🚀 MATE Wayland Session
+# 🚀 MATE Wayland Session (legacy)
 
-Wayland session using Wayfire for the MATE desktop
+Wayland session using Wayfire for the MATE desktop via a startup script. This is still the current wayland session in 1.28 releases. In the 1.29 series this has been superseded by inclusion of a wayland session
+in mate-session-manager. This also uses wayfire at this time but will eventually be superseded by the new Polo compositor. Polo is designed specifically for MATE, supports most Marco features but in waylnd not x11 with some of the most important effects from wayfire (and thus from compiz) ported over. Note that wayland is always a compositor, so we don't have to deal with a noncompositing case here.
 
 ## 📦 Building MATE-WAYLAND-SESSION
 
