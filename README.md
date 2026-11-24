@@ -3,7 +3,7 @@
 # 🚀 MATE Wayland Session (legacy)
 
 Wayland session using Wayfire for the MATE desktop via a startup script. This is still the current wayland session in 1.28 releases. In the 1.29 series this has been superseded by inclusion of a wayland session
-in mate-session-manager. This also uses wayfire at this time but will eventually be superseded by the new Polo compositor. Polo is designed specifically for MATE, supports most Marco features but in waylnd not x11 with some of the most important effects from wayfire (and thus from compiz) ported over. Note that wayland is always a compositor, so we don't have to deal with a noncompositing case here.
+in mate-session-manager. This also uses wayfire at this time but will eventually be superseded by the new Polo compositor. Polo is designed specifically for MATE, supports most Marco features but in wayland not x11 with some of the most important effects from wayfire (and thus from compiz) ported over. Note that wayland is always a compositor, so we don't have to deal with a noncompositing case here.
 
 ## 📦 Building MATE-WAYLAND-SESSION
 
@@ -31,7 +31,7 @@ This is a simple and experimental MATE session using Wayfire, a Wayland composit
 ### 🛠 Configuration
 
 - **GSettings**: GNOME, not MATE, gsettings preferences apply for fonts and icon themes under Wayland. For XWayland apps, MATE settings are applied.
-- **GTK Options**: Many options selectable in X11 are hardcoded in Wayland. For example, headerbars on dialogs clash with the MATE UI and can be fixed by installing [GTK 3 with gtk3-classic patches](https://github.com/lah7/gtk3-classic).
+- **GTK Options**: Many options selectable in X11 are hard-coded in Wayland. For example, header-bars on dialogs clash with the MATE UI and can be fixed by installing [GTK 3 with gtk3-classic patches](https://github.com/lah7/gtk3-classic).
 
 ### 🔧 Setting Themes and Fonts
 
