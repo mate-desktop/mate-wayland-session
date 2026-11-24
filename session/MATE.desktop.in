@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=MATE (Wayland)
+Name=MATE (Wayland-legacy)
 Comment=This session logs you into MATE using the Wayfire Wayland compositor
 Exec=mate-wayland.sh
 TryExec=mate-wayland.sh
